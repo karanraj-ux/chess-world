@@ -6,7 +6,8 @@ import { createServer } from "http";
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  // Render/Railway/Fly provide PORT; default 3000 for local dev.
+  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
   
   const httpServer = createServer(app);
   const io = new SocketIOServer(httpServer, {

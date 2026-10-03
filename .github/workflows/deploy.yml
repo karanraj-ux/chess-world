@@ -25,6 +25,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx vite build
+        env:
+          # Set repo variable VITE_SOCKET_URL (Settings → Secrets and variables
+          # → Actions → Variables) to the persistent socket-server URL, e.g.
+          # https://chess-world.onrender.com — the Tavern lobby connects there.
+          # Unset = same-origin (local dev behavior).
+          VITE_SOCKET_URL: ${{ vars.VITE_SOCKET_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
