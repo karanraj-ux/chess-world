@@ -1,0 +1,6 @@
+{
+  "name": "Chess World",
+  "description": "A revolutionary chess variant where classic rules are just a suggestion. Build an economy to freeze time, bribe enemies, and assassinate targets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
